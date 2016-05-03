@@ -7,22 +7,22 @@
 
 
 html {
-     height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+     height: 100%; /* make sure our HTML takes up 100% of browser window */
      font-size: 100%;
  }
  
  body {
-     font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
-     color: white;             /* sets the text color to white */
-     min-height: 100%;  /* says the height of the body must be, at minimum, 100% of the window */
+     font-family: 'Open Sans'; /* set font to "Open Sans" */
+     color: white;       /* set text color to white */
+     min-height: 100%;  /* set body height to a minimum, 100% of the window */
  }
  
 
  .navbar {
      position: relative;
      padding: 0.5rem;
-     background-color: rgba(101,18,95,0.5);
-     z-index: 1;
+     background-color: rgba(101,18,95,0.5);  /* fourth property is opacity  */
+     z-index: 1; /* larger z-index values sit above lesser ones.  */
  }
  
  .navbar .logo {
@@ -39,7 +39,6 @@ html {
      right: 0;
      height: 100px;
      color: white;
-     /* #3 */
      text-decoration: none;
  }
  
@@ -49,19 +48,17 @@ html {
      height: 100%;
      padding-left: 1rem;
      padding-right: 1rem;
-     /* #4 */
-     vertical-align: middle;
+     vertical-align: middle;  /* center content veritically */
      color: white;
      font-size: 0.625rem;
      letter-spacing: 0.05rem;
      font-weight: 700;
      text-transform: uppercase;
-     /* #3 */
      text-decoration: none;
      cursor: pointer;
  }
  
-   /* #5 */
+/* append pseudo-class selector to nav-bar link called :hover */
  .links-container .navbar-link:hover {
      color: rgb(233,50,117);
  }
@@ -71,11 +68,11 @@ html {
     background-color: white;
 }
 
-
+/* what does this code do ?? */
 .container {
     margin: 0 auto;
-    max-width: 64rem;
-}
+    max-width: 70rem;
+} 
 
 
  /* Medium and small screens (640px) */
