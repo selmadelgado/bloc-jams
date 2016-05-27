@@ -36,7 +36,7 @@
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
-      + '  <td class="song-item-number">' + songNumber + '</td>'
+      + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
       + '  <td class="song-item-title">' + songName + '</td>'
       + '  <td class="song-item-duration">' + songLength + '</td>'
       + '</tr>'
@@ -70,6 +70,66 @@ var createSongRow = function(songNumber, songName, songLength) {
      }
  };
  
+
+//Listen for an event on the parent element but target the behavior on one of its children
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+var songRows = document.getElementsByClassName('album-view-song-item');
+
+
+// Display play button when we hover over the table row
+ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+
+
+//Display the play button when we hover over the table row
+songListContainer.addEventListener('mouseover', function(event) {
+        
+             // Only target individual song rows during event delegation
+         if (event.target.parentElement.className === 'album-view-song-item') {
+             
+              //Use querySelector() method to return a single element with the .song-item-number class 
+             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+         }
+    
+     });
+
+
+
+//When the mouse leaves a selected table row, it will change back to the song number
+for (var i = 0; i < songRows.length; i++) {
+    songRows[i].addEventListener('mouseleave', function(event) {
+    
+    // Selects first child element, which is the song-item-number element
+     this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+         });
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
