@@ -18,9 +18,6 @@ var buildCollectionItemTemplate = function() {
     return $(template);
 };
 
-return $(template);
- };
-
 $(window).load(function() {
     var $collectionContainer = $('.album-covers');
     $collectionContainer.empty();
