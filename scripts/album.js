@@ -101,24 +101,44 @@ var getSongItem = function(element) {
 
  var setCurrentAlbum = function(album) {
      // #1 Select elements that we want to populate dynamically
+<<<<<<< HEAD
+=======
+     
+>>>>>>> checkpoint-30-jQuery-Collection
      var $albumTitle = $('.album-view-title');
      var $albumArtist = $('.album-view-artist');
      var $albumReleaseInfo = $('.album-view-release-info');
      var $albumImage = $('.album-cover-art');
      var $albumSongList = $('.album-view-song-list');
+<<<<<<< HEAD
  
      // #2 Assign vales to each part of the album (text, images)
      $albumTitle.text(album.title);
+=======
+
+     
+     // #2 Assign vales to each part of the album (text, images)
+     $albumTitle.text(album.name);
+>>>>>>> checkpoint-30-jQuery-Collection
      $albumArtist.text(album.artist);
      $albumReleaseInfo.text(album.year + ' ' + album.label);
      $albumImage.attr('src', album.albumArtUrl);
  
      // #3 Clear contents of song list container
+<<<<<<< HEAD
      $albumSongList.empty();
  
      // #4 Build song list from album JavaScript Object
      for (var i = 0; i < album.songs.length; i++) {
          var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+=======
+      $albumSongList.empty();
+ 
+     // #4 Build song list from album JavaScript Object
+     for (var i = 0; i < album.songs.length; i++) {
+
+         var $newRow= createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
+>>>>>>> checkpoint-30-jQuery-Collection
          $albumSongList.append($newRow);
      }
  };
