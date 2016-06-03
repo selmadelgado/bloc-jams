@@ -41,7 +41,7 @@ var createSongRow = function(songNumber, songName, songLength) {
       + '</tr>'
       ;
  
-    var $row = $(template);
+   var $row = $(template);
     
    var clickHandler = function() {
    var songNumber = $(this).attr('data-song-number');
@@ -90,23 +90,23 @@ var createSongRow = function(songNumber, songName, songLength) {
 
 
  var setCurrentAlbum = function(album) {
-     // #1 Select elements that we want to populate dynamically
+     // Select elements that we want to populate dynamically
      var $albumTitle = $('.album-view-title');
      var $albumArtist = $('.album-view-artist');
      var $albumReleaseInfo = $('.album-view-release-info');
      var $albumImage = $('.album-cover-art');
      var $albumSongList = $('.album-view-song-list');
  
-     // #2 Assign vales to each part of the album (text, images)
+     // Assign values to each part of the album (text, images)
      $albumTitle.text(album.title);
      $albumArtist.text(album.artist);
      $albumReleaseInfo.text(album.year + ' ' + album.label);
      $albumImage.attr('src', album.albumArtUrl);
  
-     // #3 Clear contents of song list container
+     // Clear contents of song list container
      $albumSongList.empty();
  
-     // #4 Build song list from album JavaScript Object
+     // Build song list from album JavaScript Object
      for (var i = 0; i < album.songs.length; i++) {
          var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
          $albumSongList.append($newRow);
@@ -128,7 +128,6 @@ var currentlyPlayingSong = null;
      setCurrentAlbum(albumPicasso);
      
  }); 
-
 
 
 
